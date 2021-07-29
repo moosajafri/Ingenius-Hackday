@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LoggerService } from '../services/logger.service';
+import { LoggerService } from '../services/logger-service/logger.service';
 
 interface AppComponentProps {
   title: string;
@@ -12,11 +12,10 @@ interface AppComponentProps {
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements AppComponentProps {
-
-  constructor(private logger: LoggerService) { }
+  constructor(private logger: LoggerService) {}
 
   abc = new LoggerService();
   title: string = 'tour-of-heroes';
@@ -28,7 +27,6 @@ export class AppComponent implements AppComponentProps {
     let elementId: string = (event.target as Element).id;
     this.logger.writeLog(`${elementId} invoked this`);
     alert(`${elementId} invoked this`);
-
   }
   canClick = false;
 }
