@@ -1,0 +1,32 @@
+# graphql/schema.graphql
+type Hero @model
+@auth(rules: [{ allow: public, operations: [read] }])
+{
+  id: ID!
+  name: String!
+  category: String
+}
+
+# input HeroInput {
+#   id: ID!
+#   name: String!
+#   category: String
+# }
+
+# input UpdateHeroInput {
+#   id: ID!
+#   name: String
+#   category: String
+# }
+
+# type Query {
+#   getHeroById(heroId: String!): Hero
+#   listHeroes: [Hero]
+#   searchHeroes(searchTerm: String!): [Hero]
+# }
+
+# type Mutation {
+#   createHero(hero: HeroInput!): Hero
+#   updateHero(hero: UpdateHeroInput!): Hero
+#   deleteHero(heroId: String!): String
+# }

@@ -11,6 +11,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,15 +25,16 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule, 
+    HttpClientModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,
     }),
+    AmplifyUIAngularModule
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
